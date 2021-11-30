@@ -26,4 +26,4 @@ jobs:
       run: docker build . --file Dockerfile --tag aws-encryption-provider:$(date +%F)-$(echo "${{ github.sha }}" | cut -c 1-9 )
 
     - name: Push Docker image
-      run: docker push aws-encryption-provider:$(date +%F)-$(echo "${{GITHUB_SHA}}" | cut -c 1-9 )
+      run: docker push aws-encryption-provider:$(date +%F)-$(echo "${{ github.sha }}" | cut -c 1-9 )
