@@ -23,7 +23,7 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}  
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag aws-encryption-provider:$(date +%s)
+      run: docker build . --file Dockerfile --tag aws-encryption-provider:$(date +%F)-$(echo "${{GITHUB_SHA}}" | cut -c 1-9 )
 
     - name: Push Docker image
-      run: docker push aws-encryption-provider:$(date +%s)
+      run: docker push aws-encryption-provider:$(date +%F)-$(echo "${{GITHUB_SHA}}" | cut -c 1-9 )
