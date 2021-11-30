@@ -23,7 +23,7 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}  
     
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag a1zk/aws-encryption-provider:$(date +%s)
+      run: docker build . --file Dockerfile --tag aws-encryption-provider:$(date +%s)
 
     - name: Push Docker image
-      run: docker push a1zk/aws-encryption-provider:$(date +%s)
+      run: docker push aws-encryption-provider:$(date +%s)
